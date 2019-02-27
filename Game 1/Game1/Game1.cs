@@ -1,8 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
-
+using System;
 
 public class Game1 : Game
 {
@@ -10,9 +9,9 @@ public class Game1 : Game
     SpriteBatch spriteBatch;
     private Texture2D heroRunCells;
     private InputHandler input;
-    Vector2 position;
-    Vector2 velocity;
-    readonly Vector2 gravity = new Vector2(0, -9.8f);
+    ScrollBackground myBackground = new ScrollBackground();
+
+
 
 
     // The AnimatedSpriteStrip class is not part of XNA but has been written by Simon Schofield
@@ -26,6 +25,7 @@ public class Game1 : Game
         graphics.PreferredBackBufferWidth = 768;
         graphics.PreferredBackBufferHeight = 576;
         Content.RootDirectory = "Content";
+
 
 
         // The InputHandler class is not part of XNA but has been written by Simon Schofield to help
@@ -42,7 +42,8 @@ public class Game1 : Game
     /// </summary>
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
+        myBackground.Initialize();
+       
 
         base.Initialize();
     }
@@ -55,19 +56,21 @@ public class Game1 : Game
     {
         // Create a new SpriteBatch, which can be used to draw textures.
         spriteBatch = new SpriteBatch(GraphicsDevice);
-        Texture2D heroRunCells = Content.Load<Texture2D>("CowboyRun");
-        Texture2D heroJumpCells = Content.Load<Texture2D>("HeroJump");
-        Texture2D heroIdle = Content.Load<Texture2D>("Idle");
 
-        AnimatedSpriteStrip myHeroRunning = new AnimatedSpriteStrip(heroRunCells, 10, 0.1f, true);
-        AnimatedSpriteStrip myHeroJumping = new AnimatedSpriteStrip(heroJumpCells, 11, 0.1f, true);
-        //AnimatedSpriteStrip myHeroIdle = new AnimatedSpriteStrip(heroIdle, 1, 0.1f, true);
+            
+        myBackground.LoadBackground(Content);
+
+       
+
+        AnimatedSpriteStrip myHeroRunning = new AnimatedSpriteStrip(Content.Load<Texture2D>("HeroRun"), 10, 0.1f, true);
+        AnimatedSpriteStrip myHeroJumping = new AnimatedSpriteStrip(Content.Load<Texture2D>("HeroJump"), 11, 0.1f, true);
+        AnimatedSpriteStrip myHeroIdle = new AnimatedSpriteStrip(Content.Load<Texture2D>("Idle"), 1, 0.1f, true);
         myHeroRunning.setName("run");
         myHeroJumping.setName("jump");
-        //myHeroIdle.setName("idle");
+        myHeroIdle.setName("idle");
         myHero.addAnimatedSpriteStrip(myHeroRunning);
         myHero.addAnimatedSpriteStrip(myHeroJumping);
-       // myHero.addAnimatedSpriteStrip(myHeroIdle);
+        myHero.addAnimatedSpriteStrip(myHeroIdle);
         myHero.XPos = 200;
         myHero.YPos = 200;
 
@@ -95,26 +98,46 @@ public class Game1 : Game
             this.Exit();
         input.Update();
 
+        myBackground.updateBackground(gameTime);
+
         if (input.IsKeyDown(Keys.Left))
         {
+            myHero.setCurrentAction("run");
             myHero.XPos -= 4;
             myHero.setCurrentDirection("left");
+        }
+        else if (input.HasReleasedKey(Keys.Left))
+        {
+            myHero.setCurrentAction("idle");
         }
 
         if (input.IsKeyDown(Keys.Right))
         {
+            myHero.setCurrentAction("run");
             myHero.XPos += 4;
             myHero.setCurrentDirection("right");
         }
-
-        if (input.IsKeyDown(Keys.Space))
+        else if (input.HasReleasedKey(Keys.Right))
         {
-            
+            myHero.setCurrentAction("idle");
+            Console.WriteLine(myHero.currentActionName);
+        }
+
+        if (input.WasKeyPressed(Keys.Space))
+        {
+            myHero.YPos -= 40;
             myHero.setCurrentAction("jump");
+        }
+        else if (input.HasReleasedKey(Keys.Space))
+        {
+            Console.WriteLine("Space Released");
+            myHero.YPos += 40;
+            Console.WriteLine(myHero.YPos);
         }
         if (input.IsKeyDown(Keys.RightShift))
         {
-            //myHero.setCurrentAction("idle");
+            myHero.setCurrentAction("idle");
+
         }
         else
         {
@@ -122,6 +145,8 @@ public class Game1 : Game
             myHero.setCurrentAction("run");
 
         }
+
+
 
 
         base.Update(gameTime);
@@ -138,6 +163,7 @@ public class Game1 : Game
 
         // Draw the sprite.
         spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+        myBackground.drawBackground(spriteBatch);
         myHero.Draw(gameTime, spriteBatch);
 
 

@@ -218,3 +218,34 @@ D:\Uni work\Game programming\Game Attempt 3\Game 1\Game1\obj\x86\Debug\Game1.exe
 D:\Uni work\Game programming\Game Attempt 3\Game 1\Game1\obj\x86\Debug\Game1.pdb
 D:\Uni work\Game programming\Game Attempt 3\Game 1\Game1\bin\Windows\x86\Debug\Content\CowboyRun.xnb
 D:\Uni work\Game programming\Game Attempt 3\Game 1\Game1\bin\Windows\x86\Debug\Content\Cowboy Idle.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Cowboy Idle.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\CowboyRun.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\HeroCelebrate.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\HeroDie.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\HeroJump.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\HeroRun.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Idle.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Game1.exe
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Game1.pdb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.dll
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.xml
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\obj\x86\Debug\Game1.csprojAssemblyReference.cache
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\obj\x86\Debug\Game1.csproj.CoreCompileInputs.cache
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\obj\x86\Debug\Game1.csproj.CopyComplete
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\obj\x86\Debug\Game1.exe
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\obj\x86\Debug\Game1.pdb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\BG.xnb

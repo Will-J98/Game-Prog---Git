@@ -40,10 +40,12 @@ class AnimatedSpriteStrip
     // counts from 0 to everupwards as the object lives on
     private int totalFramesPlayed;
 
+    private float scale = 1.0f;
+
 
     // NEW stuff for the User Input examples
-    public int XPos;
-    public int YPos;
+    public float XPos;
+    public float YPos;
     private SpriteEffects mySpriteEffects;
     private float myDrawingDepth;
 
@@ -59,8 +61,8 @@ class AnimatedSpriteStrip
         currentFrameIndex = 0;
         totalFramesPlayed = 0;
 
-        XPos = 0;
-        YPos = 0;
+        XPos = 0f;
+        YPos = 0f;
         mySpriteEffects = SpriteEffects.None;
         myDrawingDepth = 0.5f;
     }
@@ -119,7 +121,7 @@ class AnimatedSpriteStrip
         Vector2 myPosition;
         myPosition.X = (float)XPos;
         myPosition.Y = (float)YPos;
-        spriteBatch.Draw(myCellsTexture, myPosition, sourceRect, Color.White, 0.0f, orig, 1.0f, mySpriteEffects, 0.5f);
+        spriteBatch.Draw(myCellsTexture, myPosition, sourceRect, Color.White, 0.0f, orig, scale, mySpriteEffects, 0.5f);
     }
 
 

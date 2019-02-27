@@ -4,15 +4,17 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Uni work/Game programming/Game Attempt 3/Game 1/Game1/Content/Cowboy Idle.png</File>
-    <File>D:/Uni work/Game programming/Game Attempt 3/Game 1/Game1/Content/CowboyRun.png</File>
-    <File>D:/Uni work/Game programming/Game Attempt 3/Game 1/Game1/Content/HeroCelebrate.png</File>
-    <File>D:/Uni work/Game programming/Game Attempt 3/Game 1/Game1/Content/HeroDie.png</File>
-    <File>D:/Uni work/Game programming/Game Attempt 3/Game 1/Game1/Content/HeroJump.png</File>
-    <File>D:/Uni work/Game programming/Game Attempt 3/Game 1/Game1/Content/HeroRun.png</File>
-    <File>D:/Uni work/Game programming/Game Attempt 3/Game 1/Game1/Content/Idle.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/BG.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Cowboy Idle.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/CowboyRun.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroCelebrate.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroDie.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroJump.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroRun.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Idle.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
