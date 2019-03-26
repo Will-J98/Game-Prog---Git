@@ -19,7 +19,7 @@ class AnimatedSpriteStrip
     // the action make, for multiple actions
     public String myName;
     // The tiled image from which we animate
-    private Texture2D myCellsTexture;
+    public Texture2D myCellsTexture;
 
     // Duration of time to show each frame.
     private float myFrameTime;
@@ -40,12 +40,13 @@ class AnimatedSpriteStrip
     // counts from 0 to everupwards as the object lives on
     private int totalFramesPlayed;
 
-    private float scale = 1.0f;
+    public float scale = 0.4f;
 
 
     // NEW stuff for the User Input examples
     public float XPos;
     public float YPos;
+    public Vector2 SpritePosition;
     private SpriteEffects mySpriteEffects;
     private float myDrawingDepth;
 
@@ -63,9 +64,11 @@ class AnimatedSpriteStrip
 
         XPos = 0f;
         YPos = 0f;
+
         mySpriteEffects = SpriteEffects.None;
         myDrawingDepth = 0.5f;
     }
+
 
     public void setName(string name)
     {
@@ -73,10 +76,11 @@ class AnimatedSpriteStrip
     }
 
     // returns the centre of each cell
-    private Vector2 Origin()
+    public Vector2 Origin()
     {
-        return new Vector2((myCellsTexture.Width / numberOfFrames) / 2.0f, myCellsTexture.Height / 2.0f);
+        return new Vector2((myCellsTexture.Width / numberOfFrames * 2.0f), myCellsTexture.Height * 2.0f);
     }
+
 
     public void setSpriteEffect(SpriteEffects effect)
     {
@@ -121,7 +125,9 @@ class AnimatedSpriteStrip
         Vector2 myPosition;
         myPosition.X = (float)XPos;
         myPosition.Y = (float)YPos;
-        spriteBatch.Draw(myCellsTexture, myPosition, sourceRect, Color.White, 0.0f, orig, scale, mySpriteEffects, 0.5f);
+
+        SpritePosition = new Vector2(XPos, YPos);
+        spriteBatch.Draw(myCellsTexture, myPosition, sourceRect, Color.White, 0.0f, new Vector2(), scale, mySpriteEffects, 0.5f);
     }
 
 

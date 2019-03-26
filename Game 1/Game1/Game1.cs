@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Collections.Generic;
 
 public class Game1 : Game
 {
@@ -9,15 +11,28 @@ public class Game1 : Game
     SpriteBatch spriteBatch;
     private Texture2D heroRunCells;
     private InputHandler input;
-    ScrollBackground myBackground = new ScrollBackground();
+    GameLevel myLevel = new GameLevel();
+    Character Knight;
+    Camera camera = new Camera();
+    GroundCollision groundCollision;
+    CoinCollection coin;
+    //Display display = new Display();
+    SpriteFont Health;
+    SpriteFont Time;
+    int gTime = 60;
+    
 
 
+    private Color _backgroundColour = Color.CornflowerBlue;
+
+    //private List<Component> _gameComponents;
+  
 
 
     // The AnimatedSpriteStrip class is not part of XNA but has been written by Simon Schofield
     // to help with the animation of animated sprites and can be found in the 
     // solution explorer
-    private AnimatedSpriteStripManager myHero = new AnimatedSpriteStripManager(10);
+
 
     public Game1()
     {
@@ -31,6 +46,10 @@ public class Game1 : Game
         // The InputHandler class is not part of XNA but has been written by Simon Schofield to help
         // parse user input. The class casn be found in the Solution Explorer
         input = new InputHandler();
+        Knight = new Character(input);
+        groundCollision = new GroundCollision(Knight, myLevel);
+        coin = new CoinCollection(Knight);
+       
 
     }
 
@@ -42,7 +61,10 @@ public class Game1 : Game
     /// </summary>
     protected override void Initialize()
     {
-        myBackground.Initialize();
+        IsMouseVisible = true;
+
+        myLevel.Initialize();
+        
        
 
         base.Initialize();
@@ -57,25 +79,17 @@ public class Game1 : Game
         // Create a new SpriteBatch, which can be used to draw textures.
         spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            
-        myBackground.LoadBackground(Content);
-
+        Health = Content.Load<SpriteFont>("Fonts/Health1");
+        Time = Content.Load<SpriteFont>("Fonts/Time");
+        //display.LoadText(Content);
+        myLevel.LoadLevel(Content);
+        Knight.LoadKnight(Content);
+        Knight.LoadSqaures(Content);
+        coin.LoadCoins(Content);
        
-
-        AnimatedSpriteStrip myHeroRunning = new AnimatedSpriteStrip(Content.Load<Texture2D>("HeroRun"), 10, 0.1f, true);
-        AnimatedSpriteStrip myHeroJumping = new AnimatedSpriteStrip(Content.Load<Texture2D>("HeroJump"), 11, 0.1f, true);
-        AnimatedSpriteStrip myHeroIdle = new AnimatedSpriteStrip(Content.Load<Texture2D>("Idle"), 1, 0.1f, true);
-        myHeroRunning.setName("run");
-        myHeroJumping.setName("jump");
-        myHeroIdle.setName("idle");
-        myHero.addAnimatedSpriteStrip(myHeroRunning);
-        myHero.addAnimatedSpriteStrip(myHeroJumping);
-        myHero.addAnimatedSpriteStrip(myHeroIdle);
-        myHero.XPos = 200;
-        myHero.YPos = 200;
-
         // TODO: use this.Content to load your game content here
     }
+   
 
     /// <summary>
     /// UnloadContent will be called once per game and is the place to unload
@@ -98,56 +112,30 @@ public class Game1 : Game
             this.Exit();
         input.Update();
 
-        myBackground.updateBackground(gameTime);
+        Knight.squareUpdate();
 
-        if (input.IsKeyDown(Keys.Left))
-        {
-            myHero.setCurrentAction("run");
-            myHero.XPos -= 4;
-            myHero.setCurrentDirection("left");
-        }
-        else if (input.HasReleasedKey(Keys.Left))
-        {
-            myHero.setCurrentAction("idle");
-        }
+        
+        camera.Update(Knight.knightPos());
 
-        if (input.IsKeyDown(Keys.Right))
+        if (groundCollision.is_Colliding() == true)
         {
-            myHero.setCurrentAction("run");
-            myHero.XPos += 4;
-            myHero.setCurrentDirection("right");
+            Knight.is_grounded = true;
+            //Console.WriteLine("True");
         }
-        else if (input.HasReleasedKey(Keys.Right))
+        if(groundCollision.is_Colliding() == false)
         {
-            myHero.setCurrentAction("idle");
-            Console.WriteLine(myHero.currentActionName);
+            Knight.is_grounded = false;
         }
 
-        if (input.WasKeyPressed(Keys.Space))
-        {
-            myHero.YPos -= 40;
-            myHero.setCurrentAction("jump");
-        }
-        else if (input.HasReleasedKey(Keys.Space))
-        {
-            Console.WriteLine("Space Released");
-            myHero.YPos += 40;
-            Console.WriteLine(myHero.YPos);
-        }
-        if (input.IsKeyDown(Keys.RightShift))
-        {
-            myHero.setCurrentAction("idle");
+        Knight.updateKnight(gameTime, spriteBatch);
+        coin.coinPickup();
+        //Console.WriteLine(Knight.score);
 
-        }
-        else
-        {
+        gTime -= (int)gameTime.TotalGameTime.Seconds;
+        //gTime = Math.Round(gTime, 2);
+        //Console.WriteLine(gTime);
 
-            myHero.setCurrentAction("run");
-
-        }
-
-
-
+        //display.updateTime(gameTime);
 
         base.Update(gameTime);
     }
@@ -158,13 +146,20 @@ public class Game1 : Game
     /// <param name="gameTime">Provides a snapshot of timing values.</param>
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
+        GraphicsDevice.Clear(_backgroundColour);
 
 
         // Draw the sprite.
-        spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
-        myBackground.drawBackground(spriteBatch);
-        myHero.Draw(gameTime, spriteBatch);
+        spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend,null,null,null,null,camera.ViewMatrix);
+
+        myLevel.drawLevel(spriteBatch);
+        Knight.knightDraw(gameTime, spriteBatch);
+        //display.DrawText(spriteBatch);
+        coin.drawCoins(spriteBatch);
+        spriteBatch.DrawString(Health, "Health: " + Knight.kHealth, new Vector2(0, 0), Color.White);
+        spriteBatch.DrawString(Time, gTime.ToString(), new Vector2(334,0), Color.White);
+        spriteBatch.DrawString(Health, "Score: " + Knight.score.ToString(), new Vector2(500, 0), Color.White);
+
 
 
         spriteBatch.End();

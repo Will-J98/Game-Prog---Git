@@ -13,84 +13,95 @@ using Microsoft.Xna.Framework.Content;
 // this is so they can be set by the game input and logic before drawing
 
 
-    class AnimatedSpriteStripManager
+class AnimatedSpriteStripManager
+{
+
+    private AnimatedSpriteStrip[] myAnimatedSpriteStrips;
+    private int actionsAddedCount = 0;
+    private int currentAction = 0;
+    private string currentDirection = "left";
+
+    private string previousAction;
+
+    public int XPos;
+    public int YPos;
+    public string currentActionName;
+
+        
+
+    public Vector2 GetBox()
     {
+        Vector2 textureDim = new Vector2();
+        textureDim.X = (myAnimatedSpriteStrips[0].myCellsTexture.Width) * myAnimatedSpriteStrips[0].scale / 10;
+        textureDim.Y = (myAnimatedSpriteStrips[0].myCellsTexture.Height) * myAnimatedSpriteStrips[0].scale;
+        //Console.WriteLine("X: " + textureDim.X.ToString() + ", Y: " + textureDim.Y.ToString());
+        return textureDim;
+    }
 
-        private AnimatedSpriteStrip[] myAnimatedSpriteStrips;
-        private int actionsAddedCount = 0;
-        private int currentAction = 0;
-        private string currentDirection = "left";
+    public AnimatedSpriteStripManager(int numActions)
+    {
+        myAnimatedSpriteStrips = new AnimatedSpriteStrip[numActions];
+    }
 
-        private string previousAction;
-
-
-        public int XPos;
-        public int YPos;
-        public string currentActionName;
-
-        public AnimatedSpriteStripManager(int numActions)
+    public void addAnimatedSpriteStrip(AnimatedSpriteStrip thisAnim)
+    {
+        if (actionsAddedCount > myAnimatedSpriteStrips.Length)
         {
-            myAnimatedSpriteStrips = new AnimatedSpriteStrip[numActions];
+            Console.WriteLine("adding too many actions for your actions manager");
         }
-
-        public void addAnimatedSpriteStrip(AnimatedSpriteStrip thisAnim)
+        else
         {
-            if (actionsAddedCount > myAnimatedSpriteStrips.Length)
-            {
-                Console.WriteLine("adding too many actions for your actions manager");
-            }
-            else
-            {
-                myAnimatedSpriteStrips[actionsAddedCount] = thisAnim;
-                actionsAddedCount = actionsAddedCount + 1;
-            }
+            myAnimatedSpriteStrips[actionsAddedCount] = thisAnim;
+            actionsAddedCount = actionsAddedCount + 1;
         }
+    }
 
 
-        public void setCurrentAction(string actionName)
-        {
+    public void setCurrentAction(string actionName)
+    {
             
-            for (int n = 0; n < actionsAddedCount; n++)
-            {
-                if (actionName == myAnimatedSpriteStrips[n].myName)
-                {
-
-                    currentAction = n;
-                    previousAction = currentActionName;
-                    currentActionName = actionName;
-                    setCurrentDirection(currentDirection);
-                    return;
-                }
-            }
-            Console.WriteLine("Cannot find this action in action list");
-        }
-
-
-        public void setCurrentDirection(string dir)
+        for (int n = 0; n < actionsAddedCount; n++)
         {
-            // assumes all actions drawn facing to the LEFT
-            if (actionsAddedCount == 0) return;
+            if (actionName == myAnimatedSpriteStrips[n].myName)
+            {
 
-            if(dir == "left")
-            {
-                currentDirection = "left";
-                myAnimatedSpriteStrips[currentAction].setSpriteEffect(SpriteEffects.None); 
-            }
-            if (dir == "right")
-            {
-                currentDirection = "right";
-                myAnimatedSpriteStrips[currentAction].setSpriteEffect(SpriteEffects.FlipHorizontally);
+                currentAction = n;
+                previousAction = currentActionName;
+                currentActionName = actionName;
+                setCurrentDirection(currentDirection);
+                return;
             }
         }
+        Console.WriteLine("Cannot find this action in action list");
+    }
 
-        public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+
+    public void setCurrentDirection(string dir)
+    {
+        // assumes all actions drawn facing to the LEFT
+        if (actionsAddedCount == 0) return;
+
+        if(dir == "left")
         {
-            if (actionsAddedCount == 0) return;
-            myAnimatedSpriteStrips[currentAction].XPos = XPos;
-            myAnimatedSpriteStrips[currentAction].YPos = YPos;
-            myAnimatedSpriteStrips[currentAction].Draw(gameTime, spriteBatch);
-
+            currentDirection = "left";
+            myAnimatedSpriteStrips[currentAction].setSpriteEffect(SpriteEffects.FlipHorizontally); 
         }
+        if (dir == "right")
+        {
+            currentDirection = "right";
+            myAnimatedSpriteStrips[currentAction].setSpriteEffect(SpriteEffects.None);
+        }
+    }
+
+    public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
+    {
+        if (actionsAddedCount == 0) return;
+        myAnimatedSpriteStrips[currentAction].XPos = XPos;
+        myAnimatedSpriteStrips[currentAction].YPos = YPos;
+        myAnimatedSpriteStrips[currentAction].Draw(gameTime, spriteBatch);
 
     }
+
+
+}
 

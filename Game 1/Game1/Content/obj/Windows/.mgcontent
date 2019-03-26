@@ -5,15 +5,29 @@
   <Config />
   <SourceFiles>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/BG.png</File>
-    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Cowboy Idle.png</File>
-    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/CowboyRun.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Bottom floor.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Controls/Button.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Floating platform.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Fonts/Health1.spritefont</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Fonts/Time.spritefont</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HealthBar_thumb.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroCelebrate.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroDie.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroJump.png</File>
-    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroRun.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Idle.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightIdle.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightJump.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightRun.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/RedSquare.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>HealthBar.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

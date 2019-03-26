@@ -218,12 +218,9 @@ D:\Uni work\Game programming\Game Attempt 3\Game 1\Game1\obj\x86\Debug\Game1.exe
 D:\Uni work\Game programming\Game Attempt 3\Game 1\Game1\obj\x86\Debug\Game1.pdb
 D:\Uni work\Game programming\Game Attempt 3\Game 1\Game1\bin\Windows\x86\Debug\Content\CowboyRun.xnb
 D:\Uni work\Game programming\Game Attempt 3\Game 1\Game1\bin\Windows\x86\Debug\Content\Cowboy Idle.xnb
-D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Cowboy Idle.xnb
-D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\CowboyRun.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\HeroCelebrate.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\HeroDie.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\HeroJump.xnb
-D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\HeroRun.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Idle.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Game1.exe
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Game1.pdb
@@ -249,3 +246,15 @@ D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\obj\x86\Debug\Game1.cs
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\obj\x86\Debug\Game1.exe
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\obj\x86\Debug\Game1.pdb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\BG.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\KnightRun.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\KnightIdle.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\KnightJump.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Bottom floor.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\HealthBar.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Fonts\File.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Controls\Button.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Floating platform.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Fonts\Font.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\RedSquare.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Fonts\Health1.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Fonts\Time.xnb
