@@ -164,16 +164,16 @@ class GameLevel
         platformTwo.Position = new Vector2(650, 270);
 
         platformThree.LoadContent(theContentManager, "Floating platform");
-        platformThree.Position = new Vector2(400, 385);
+        platformThree.Position = new Vector2(900, 385);
 
         platformFour.LoadContent(theContentManager, "Floating platform");
-        platformFour.Position = new Vector2(400, 385);
+        platformFour.Position = new Vector2(1400, 385);
 
         platformFive.LoadContent(theContentManager, "Floating platform");
-        platformFive.Position = new Vector2(400, 385);
+        platformFive.Position = new Vector2(1650, 270);
 
         platformSix.LoadContent(theContentManager, "Floating platform");
-        platformSix.Position = new Vector2(400, 385);
+        platformSix.Position = new Vector2(1900, 385);
 
         platformSeven.LoadContent(theContentManager, "Floating platform");
         platformSeven.Position = new Vector2(400, 385);

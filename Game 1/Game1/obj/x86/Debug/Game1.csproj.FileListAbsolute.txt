@@ -258,3 +258,4 @@ D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\RedSquare.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Fonts\Health1.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Fonts\Time.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Coin.xnb

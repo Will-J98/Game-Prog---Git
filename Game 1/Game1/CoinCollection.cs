@@ -23,7 +23,7 @@ class CoinCollection
 
         //coins.LoadContent(content, "Idle");
         //coins.Position = new Vector2(500, 300);
-        for (i = 0; i < 10; i++)
+        for (i = 0; i < 11; i++)
         {
             coinList.Add(new Single_Sprite());
             coinList[i].LoadContent(content, "Idle");
@@ -43,13 +43,10 @@ class CoinCollection
             coinList[i].Position = new Vector2(xCoin, 300);
             Console.WriteLine("coin number " + i + " at position " + coinList[i].Position);  
         }
-        coinList[0].Position.X = 1000;
-        coinList[0].Position.Y = 300;
-        //coin[0].Position.X = 0;
-        //coin[0].Position.Y = 200;
-        Console.WriteLine("Coin 0" + coinList[0].Position);
-        //coin[0].Position = new Vector2(0, 0);
 
+        //Console.WriteLine("Coin 0" + coinList[0].Position);
+        coinList[10].Position = new Vector2(700, 175);
+        coinList[0].Position = new Vector2(5000, 300);
     }
 
     public CoinCollection(Character _knight)

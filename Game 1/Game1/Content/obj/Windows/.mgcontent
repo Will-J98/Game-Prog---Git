@@ -6,6 +6,7 @@
   <SourceFiles>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/BG.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Bottom floor.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Coin.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Controls/Button.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Floating platform.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Fonts/Health1.spritefont</File>
@@ -21,6 +22,7 @@
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/RedSquare.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

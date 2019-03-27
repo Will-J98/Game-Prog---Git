@@ -54,12 +54,32 @@ class GroundCollision
             knight.jumpspeed = 0;
             return true;
         }
-        else if(lvl.platformOne.BoundingBox.Intersects(knight.CollisionLine))
+        else if(lvl.platformOne.TopLine.Intersects(knight.CollisionLine))
         {
             knight.jumpspeed = 0;
             return true;
         }
-        else if(lvl.platformTwo.BoundingBox.Intersects(knight.CollisionLine))
+        else if(lvl.platformTwo.TopLine.Intersects(knight.CollisionLine))
+        {
+            knight.jumpspeed = 0;
+            return true;
+        }
+        else if (lvl.platformThree.TopLine.Intersects(knight.CollisionLine))
+        {
+            knight.jumpspeed = 0;
+            return true;
+        }
+        else if (lvl.platformFour.TopLine.Intersects(knight.CollisionLine))
+        {
+            knight.jumpspeed = 0;
+            return true;
+        }
+        else if (lvl.platformFive.TopLine.Intersects(knight.CollisionLine))
+        {
+            knight.jumpspeed = 0;
+            return true;
+        }
+        else if (lvl.platformSix.TopLine.Intersects(knight.CollisionLine))
         {
             knight.jumpspeed = 0;
             return true;

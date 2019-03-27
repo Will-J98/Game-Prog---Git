@@ -22,9 +22,22 @@ class Single_Sprite
                 (int)Position.X,
                 (int)Position.Y,
                 (int)(mSpriteTexture.Width * Scale),
+                (int)(mSpriteTexture.Height * Scale));
+        }
+    }
+
+    public Rectangle TopLine
+    {
+        get
+        {
+            return new Rectangle(
+                (int)Position.X,
+                (int)Position.Y,
+                (int)(mSpriteTexture.Width * Scale),
                 1);
         }
     }
+
 
     public void LoadContent(ContentManager theContentManager, string theAssetName)
     {
