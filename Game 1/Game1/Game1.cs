@@ -13,6 +13,7 @@ public class Game1 : Game
     private InputHandler input;
     GameLevel myLevel = new GameLevel();
     Character Knight;
+    Enemy enemy;
     Camera camera = new Camera();
     GroundCollision groundCollision;
     CoinCollection coin;
@@ -49,7 +50,7 @@ public class Game1 : Game
         Knight = new Character(input);
         groundCollision = new GroundCollision(Knight, myLevel);
         coin = new CoinCollection(Knight);
-       
+        enemy = new Enemy();
 
     }
 
@@ -86,7 +87,8 @@ public class Game1 : Game
         Knight.LoadKnight(Content);
         Knight.LoadSqaures(Content);
         coin.LoadCoins(Content);
-       
+        enemy.LoadEnemy(Content);
+        enemy.LoadSqaures(Content);
         // TODO: use this.Content to load your game content here
     }
    
@@ -113,6 +115,7 @@ public class Game1 : Game
         input.Update();
 
         Knight.squareUpdate();
+        //enemy.squareUpdate();
 
         
         camera.Update(Knight.knightPos());
@@ -128,6 +131,7 @@ public class Game1 : Game
         }
 
         Knight.updateKnight(gameTime, spriteBatch);
+        enemy.Update();
         coin.coinPickup();
         //Console.WriteLine(Knight.score);
 
@@ -154,6 +158,7 @@ public class Game1 : Game
 
         myLevel.drawLevel(spriteBatch);
         Knight.knightDraw(gameTime, spriteBatch);
+        enemy.enemyDraw(gameTime, spriteBatch);
         //display.DrawText(spriteBatch);
         coin.drawCoins(spriteBatch);
         spriteBatch.DrawString(Health, "Health: " + Knight.kHealth, new Vector2(0, 0), Color.White);
