@@ -18,6 +18,16 @@ class Enemy
     Single_Sprite redsquare2 = new Single_Sprite();
     Single_Sprite redsquare3 = new Single_Sprite();
     Single_Sprite redsquare4 = new Single_Sprite();
+    Character knight;
+    float knightDistanceX;
+    float knightDistanceY;
+    public bool isAlive = true;
+    public bool isInRange = false;
+
+    public Enemy(Character _knight)
+    {
+        knight = _knight;
+    }
 
     public Rectangle BoundingBox
     {
@@ -75,14 +85,38 @@ class Enemy
         enemy.addAnimatedSpriteStrip(enemyRunning);
         enemy.addAnimatedSpriteStrip(enemyJumping);
         enemy.addAnimatedSpriteStrip(enemyIdle);
-        enemy.XPos = 500;
+        enemy.XPos = 2000;
         enemy.YPos = 375;
+        xVelocity = 3;
+        eHealth = 100;
     }
 
     public void Update()
     {
-        patrolling();
-        squareUpdate();
+        if (eHealth > 1)
+        {
+            patrolling();
+            squareUpdate();
+            knightDistanceX = knight.knightPos().X - enemy.XPos;
+            knightDistanceY = knight.knightPos().Y - enemy.YPos;
+            if (knightDistanceX >= -200 && knightDistanceX <= 200)
+            {
+                Console.WriteLine("Following");
+                following();
+            }
+            else
+            {
+                patrolling();
+            }
+            if (knightDistanceX >= -50 && knightDistanceX <= 50)
+            {
+                Console.WriteLine("Attacking");
+                isInRange = true;
+                enemyAttacking();
+            }
+        }
+       
+        
     }
     public void squareUpdate()
     {
@@ -97,11 +131,11 @@ class Enemy
     {
         enemy.setCurrentAction("run");
         enemy.XPos += xVelocity * direction;
-        if(enemy.XPos == 800)
+        if (enemy.XPos == 800)
         {
             enemy.setCurrentDirection("left");
             direction = -1;
-            
+
         }
         else if (enemy.XPos == 200)
         {
@@ -110,13 +144,47 @@ class Enemy
         }
     }
 
+    public void following()
+    {
+        //Console.WriteLine("Attacking");
+
+        if (knightDistanceX < -1)
+        {
+            enemy.setCurrentDirection("left");
+            direction = -1;
+        }
+
+        else if (knightDistanceX > 1)
+        {
+            enemy.setCurrentDirection("right");
+            direction = 1;
+        }
+
+        else if (knightDistanceX == 0)
+            direction = 0;
+    }
+
+    public void enemyAttacking()
+    {
+        //enemy.setcurrentaction("attacking")
+        knight.kHealth -= 20;
+    }
+
+    
+
+
     public void enemyDraw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        enemy.Draw(gameTime, spriteBatch);
-        redsquare1.Draw(spriteBatch);
-        redsquare2.Draw(spriteBatch);
-        redsquare3.Draw(spriteBatch);
-        redsquare4.Draw(spriteBatch);
+        if(eHealth > 1)
+        {
+            enemy.Draw(gameTime, spriteBatch);
+            redsquare1.Draw(spriteBatch);
+            redsquare2.Draw(spriteBatch);
+            redsquare3.Draw(spriteBatch);
+            redsquare4.Draw(spriteBatch);
+        }
+       
+       
     }
 
 

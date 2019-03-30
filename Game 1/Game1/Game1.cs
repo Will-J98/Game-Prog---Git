@@ -22,6 +22,7 @@ public class Game1 : Game
     SpriteFont Time;
     int gTime = 60;
     
+    
 
 
     private Color _backgroundColour = Color.CornflowerBlue;
@@ -50,7 +51,7 @@ public class Game1 : Game
         Knight = new Character(input);
         groundCollision = new GroundCollision(Knight, myLevel);
         coin = new CoinCollection(Knight);
-        enemy = new Enemy();
+        enemy = new Enemy(Knight);
 
     }
 
@@ -139,6 +140,12 @@ public class Game1 : Game
         //gTime = Math.Round(gTime, 2);
         //Console.WriteLine(gTime);
 
+        if (Knight.attacking() == true && enemy.isInRange == true)
+        {
+            enemy.eHealth -= 50;
+            Knight.isAttacking = false;
+            Console.WriteLine(enemy.eHealth);
+        }
         //display.updateTime(gameTime);
 
         base.Update(gameTime);

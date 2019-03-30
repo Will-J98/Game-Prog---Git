@@ -49,6 +49,7 @@ class AnimatedSpriteStrip
     public Vector2 SpritePosition;
     private SpriteEffects mySpriteEffects;
     private float myDrawingDepth;
+    public float health;
 
 
 

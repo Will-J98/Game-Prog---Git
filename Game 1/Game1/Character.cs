@@ -15,10 +15,11 @@ class Character
     public int kHealth = 100;
     public float startY, jumpspeed;
     public bool is_grounded;
-    int velocityX = 4;
+    int velocityX = 10;
     const float GRAVITY = 9.0f;
     public int velocityY;
     public int score = 0;
+    public bool isAttacking = false;
     Single_Sprite redsquare1 = new Single_Sprite();
     Single_Sprite redsquare2 = new Single_Sprite();
     Single_Sprite redsquare3 = new Single_Sprite();
@@ -123,7 +124,7 @@ class Character
     {
         if (input.IsKeyDown(Keys.Left))
         {
-            Console.WriteLine("moving left");
+            //Console.WriteLine("moving left");
             myKnight.setCurrentAction("run");
             myKnight.XPos -= velocityX;
             myKnight.setCurrentDirection("left");
@@ -134,7 +135,7 @@ class Character
 
         if (input.IsKeyDown(Keys.Right))
         {
-            Console.WriteLine("moving right");
+            //Console.WriteLine("moving right");
             myKnight.setCurrentAction("run");
             myKnight.XPos += velocityX;
             //knightPos.X += 4;
@@ -165,6 +166,16 @@ class Character
             myKnight.YPos -= 10;
             jumpspeed = -20;
         }
+    }
+    public bool attacking()
+    {
+        if (isAttacking == false && input.WasKeyPressed(Keys.X))
+        {
+            //myKnight.setCurrentAction("Attacking");
+            isAttacking = true;
+            return true;
+        }
+        else return false;
     }
 
     public void knightDraw(GameTime gameTime, SpriteBatch spriteBatch)
