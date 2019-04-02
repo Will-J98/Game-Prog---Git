@@ -21,6 +21,7 @@ public class Game1 : Game
     SpriteFont Health;
     SpriteFont Time;
     int gTime = 60;
+    float timer;
     
     
 
@@ -132,13 +133,14 @@ public class Game1 : Game
         }
 
         Knight.updateKnight(gameTime, spriteBatch);
-        enemy.Update();
+        enemy.Update(gameTime);
         coin.coinPickup();
         //Console.WriteLine(Knight.score);
 
-        gTime -= (int)gameTime.TotalGameTime.Seconds;
-        //gTime = Math.Round(gTime, 2);
-        //Console.WriteLine(gTime);
+        timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+        gTime -= (int)timer;
+        if(timer >= 1.0F) timer = 0F;
+
 
         if (Knight.attacking() == true && enemy.isInRange == true)
         {
@@ -171,8 +173,6 @@ public class Game1 : Game
         spriteBatch.DrawString(Health, "Health: " + Knight.kHealth, new Vector2(0, 0), Color.White);
         spriteBatch.DrawString(Time, gTime.ToString(), new Vector2(334,0), Color.White);
         spriteBatch.DrawString(Health, "Score: " + Knight.score.ToString(), new Vector2(500, 0), Color.White);
-
-
 
         spriteBatch.End();
 

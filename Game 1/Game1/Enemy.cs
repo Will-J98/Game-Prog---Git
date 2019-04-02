@@ -23,6 +23,7 @@ class Enemy
     float knightDistanceY;
     public bool isAlive = true;
     public bool isInRange = false;
+    double attackDelay = 0;
 
     public Enemy(Character _knight)
     {
@@ -76,22 +77,23 @@ class Enemy
 
     public void LoadEnemy(ContentManager content)
     {
-        AnimatedSpriteStrip enemyRunning = new AnimatedSpriteStrip(content.Load<Texture2D>("KnightRun"), 10, 0.1f, true);
-        AnimatedSpriteStrip enemyJumping = new AnimatedSpriteStrip(content.Load<Texture2D>("KnightJump"), 10, 0.1f, true);
-        AnimatedSpriteStrip enemyIdle = new AnimatedSpriteStrip(content.Load<Texture2D>("KnightIdle"), 10, 0.1f, true);
+        AnimatedSpriteStrip enemyRunning = new AnimatedSpriteStrip(content.Load<Texture2D>("NinjaRun"), 10, 0.1f, true);
+        AnimatedSpriteStrip enemyIdle = new AnimatedSpriteStrip(content.Load<Texture2D>("NinjaIdle"), 10, 0.1f, true);
+        AnimatedSpriteStrip enemyAttack = new AnimatedSpriteStrip(content.Load<Texture2D>("NinjaAttack"), 9, 0.1f, true);
+
         enemyRunning.setName("run");
-        enemyJumping.setName("jump");
         enemyIdle.setName("idle");
+        enemyAttack.setName("attack");
         enemy.addAnimatedSpriteStrip(enemyRunning);
-        enemy.addAnimatedSpriteStrip(enemyJumping);
         enemy.addAnimatedSpriteStrip(enemyIdle);
+        enemy.addAnimatedSpriteStrip(enemyAttack);
         enemy.XPos = 2000;
-        enemy.YPos = 375;
+        enemy.YPos = 420;
         xVelocity = 3;
         eHealth = 100;
     }
 
-    public void Update()
+    public void Update(GameTime gameTime2)
     {
         if (eHealth > 1)
         {
@@ -101,7 +103,7 @@ class Enemy
             knightDistanceY = knight.knightPos().Y - enemy.YPos;
             if (knightDistanceX >= -200 && knightDistanceX <= 200)
             {
-                Console.WriteLine("Following");
+                //Console.WriteLine("Following");
                 following();
             }
             else
@@ -112,7 +114,7 @@ class Enemy
             {
                 Console.WriteLine("Attacking");
                 isInRange = true;
-                enemyAttacking();
+                enemyAttacking(gameTime2);
             }
         }
        
@@ -146,8 +148,6 @@ class Enemy
 
     public void following()
     {
-        //Console.WriteLine("Attacking");
-
         if (knightDistanceX < -1)
         {
             enemy.setCurrentDirection("left");
@@ -164,13 +164,18 @@ class Enemy
             direction = 0;
     }
 
-    public void enemyAttacking()
+    public void enemyAttacking(GameTime gameTime)
     {
-        //enemy.setcurrentaction("attacking")
-        knight.kHealth -= 20;
+        
+        //knight.kHealth -= 20;
+        attackDelay += gameTime.ElapsedGameTime.TotalSeconds;
+        if (attackDelay > 1.5)
+        {
+            enemy.setCurrentAction("attack");
+            knight.kHealth -= 20;
+            attackDelay = 0;
+        }
     }
-
-    
 
 
     public void enemyDraw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -186,10 +191,6 @@ class Enemy
        
        
     }
-
-
-
-
 
 }
 

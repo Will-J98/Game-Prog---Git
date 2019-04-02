@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Coin.png</SourceFile>
-  <SourceTime>2019-03-26T23:17:19.8683372+00:00</SourceTime>
-  <DestFile>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/bin/Windows/Coin.xnb</DestFile>
-  <DestTime>2019-03-28T23:20:06.7227206+00:00</DestTime>
+  <SourceFile>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/../../coin.png</SourceFile>
+  <SourceTime>2019-04-02T13:40:20+01:00</SourceTime>
+  <DestFile>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/bin/Windows/coin.xnb</DestFile>
+  <DestTime>2019-04-02T23:24:48.7146734+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-09-23T22:55:52+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

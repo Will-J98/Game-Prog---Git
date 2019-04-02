@@ -104,12 +104,15 @@ class Character
         AnimatedSpriteStrip myKnightRunning = new AnimatedSpriteStrip(Content.Load<Texture2D>("KnightRun"), 10, 0.1f, true);
         AnimatedSpriteStrip myKnightJumping = new AnimatedSpriteStrip(Content.Load<Texture2D>("KnightJump"), 10, 0.1f, true);
         AnimatedSpriteStrip myKnightIdle = new AnimatedSpriteStrip(Content.Load<Texture2D>("KnightIdle"), 10, 0.1f, true);
+        AnimatedSpriteStrip myKnightAttack = new AnimatedSpriteStrip(Content.Load<Texture2D>("KnightAttack"), 9, 0.1f, true);
         myKnightRunning.setName("run");
         myKnightJumping.setName("jump");
         myKnightIdle.setName("idle");
+        myKnightAttack.setName("attack");
         myKnight.addAnimatedSpriteStrip(myKnightRunning);
         myKnight.addAnimatedSpriteStrip(myKnightJumping);
         myKnight.addAnimatedSpriteStrip(myKnightIdle);
+        myKnight.addAnimatedSpriteStrip(myKnightAttack);
         myKnight.XPos = 200;
         myKnight.YPos = 0;
         //knightPos.Y = myKnight.YPos;
@@ -171,8 +174,9 @@ class Character
     {
         if (isAttacking == false && input.WasKeyPressed(Keys.X))
         {
-            //myKnight.setCurrentAction("Attacking");
+            myKnight.setCurrentAction("attack");
             isAttacking = true;
+            myKnight.setCurrentAction("run");
             return true;
         }
         else return false;

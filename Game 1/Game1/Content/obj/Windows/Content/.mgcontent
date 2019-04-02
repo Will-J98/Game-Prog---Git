@@ -4,9 +4,9 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/../../coin.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/BG.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Bottom floor.png</File>
-    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Coin.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Controls/Button.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Fireball.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Floating platform.png</File>
@@ -17,13 +17,17 @@
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroDie.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/HeroJump.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/Idle.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightAttack.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightIdle.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightJump.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightRun.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/NinjaAttack#.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/NinjaIdle.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/NinjaRun.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/RedSquare.png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
+    <File>coin.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
@@ -37,6 +41,10 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File>NinjaAttack.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

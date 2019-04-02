@@ -26,7 +26,8 @@ class CoinCollection
         for (i = 0; i < 11; i++)
         {
             coinList.Add(new Single_Sprite());
-            coinList[i].LoadContent(content, "Idle");
+            coinList[i].LoadContent(content, "coin");
+            coinList[i].Scale = 0.35f;
             int xCoin = r.Next(0, 500);
             //if(coinList.Count() == 1)
             //{

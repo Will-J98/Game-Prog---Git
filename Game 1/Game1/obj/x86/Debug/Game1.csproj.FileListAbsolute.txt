@@ -260,3 +260,8 @@ D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Fonts\Time.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Coin.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Fireball.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\KnightAttack.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\NinjaIdle.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\NinjaRun.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\NinjaAttack#.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\NinjaAttack.xnb
