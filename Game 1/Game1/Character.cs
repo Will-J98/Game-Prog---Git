@@ -17,7 +17,7 @@ class Character
     public bool is_grounded;
     int velocityX = 10;
     const float GRAVITY = 9.0f;
-    public int velocityY;
+    public float velocityY;
     public int score = 0;
     public bool isAttacking = false;
     Single_Sprite redsquare1 = new Single_Sprite();
@@ -125,6 +125,7 @@ class Character
 
     public void updateKnight(GameTime gameTime, SpriteBatch spriteBatch)
     {
+        myKnight.YPos += (int)velocityY;
         if (input.IsKeyDown(Keys.Left))
         {
             //Console.WriteLine("moving left");
@@ -160,27 +161,36 @@ class Character
         }
 
 
-        velocityY = (int)(GRAVITY * jumpspeed);
-        myKnight.YPos += velocityY;
-        jumpspeed = 1;
+        //velocityY = (int)(GRAVITY * jumpspeed);
+        //myKnight.YPos += velocityY;
+        //jumpspeed = 1;
 
         if (input.WasKeyPressed(Keys.Space) && is_grounded == true)
         {
-            myKnight.YPos -= 10;
-            jumpspeed = -20;
+            myKnight.YPos -= 15;
+            velocityY = -12;
+            is_grounded = false;
+        }
+        if(is_grounded == false)
+        {
+            float i = 1;
+            velocityY += 0.35f * i;
         }
     }
+
+
     public bool attacking()
     {
         if (isAttacking == false && input.WasKeyPressed(Keys.X))
         {
             myKnight.setCurrentAction("attack");
             isAttacking = true;
-            myKnight.setCurrentAction("run");
+            //myKnight.setCurrentAction("run");
             return true;
         }
         else return false;
     }
+
 
     public void knightDraw(GameTime gameTime, SpriteBatch spriteBatch)
     {

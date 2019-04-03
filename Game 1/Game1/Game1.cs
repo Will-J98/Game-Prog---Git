@@ -145,8 +145,15 @@ public class Game1 : Game
         if (Knight.attacking() == true && enemy.isInRange == true)
         {
             enemy.eHealth -= 50;
+            Knight.score += 100;
             Knight.isAttacking = false;
             Console.WriteLine(enemy.eHealth);
+        }
+        else Knight.isAttacking = false;
+        if (enemy.eHealth == 0)
+        {
+            enemy.isAlive = false;
+            enemy.isInRange = false;
         }
         //display.updateTime(gameTime);
 
@@ -170,8 +177,13 @@ public class Game1 : Game
         enemy.enemyDraw(gameTime, spriteBatch);
         //display.DrawText(spriteBatch);
         coin.drawCoins(spriteBatch);
+       
+        spriteBatch.End();
+
+        spriteBatch.Begin();
+
         spriteBatch.DrawString(Health, "Health: " + Knight.kHealth, new Vector2(0, 0), Color.White);
-        spriteBatch.DrawString(Time, gTime.ToString(), new Vector2(334,0), Color.White);
+        spriteBatch.DrawString(Time, gTime.ToString(), new Vector2(334, 0), Color.White);
         spriteBatch.DrawString(Health, "Score: " + Knight.score.ToString(), new Vector2(500, 0), Color.White);
 
         spriteBatch.End();

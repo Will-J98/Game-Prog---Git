@@ -21,67 +21,67 @@ class GroundCollision
     {
         if(lvl.bottomFloor.BoundingBox.Intersects(knight.BoundingBox))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if(lvl.bottomFloorTwo.BoundingBox.Intersects(knight.BoundingBox))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if (lvl.bottomFloorThree.BoundingBox.Intersects(knight.BoundingBox))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if (lvl.bottomFloorFour.BoundingBox.Intersects(knight.BoundingBox))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if (lvl.bottomFloorFive.BoundingBox.Intersects(knight.BoundingBox))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if (lvl.bottomFloorSix.BoundingBox.Intersects(knight.BoundingBox))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if (lvl.bottomFloorSeven.BoundingBox.Intersects(knight.BoundingBox))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if(lvl.platformOne.TopLine.Intersects(knight.CollisionLine))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if(lvl.platformTwo.TopLine.Intersects(knight.CollisionLine))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if (lvl.platformThree.TopLine.Intersects(knight.CollisionLine))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if (lvl.platformFour.TopLine.Intersects(knight.CollisionLine))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if (lvl.platformFive.TopLine.Intersects(knight.CollisionLine))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         else if (lvl.platformSix.TopLine.Intersects(knight.CollisionLine))
         {
-            knight.jumpspeed = 0;
+            knight.velocityY = 0;
             return true;
         }
         return false;

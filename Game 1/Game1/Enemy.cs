@@ -24,6 +24,7 @@ class Enemy
     public bool isAlive = true;
     public bool isInRange = false;
     double attackDelay = 0;
+    int distanceTrav;
 
     public Enemy(Character _knight)
     {
@@ -95,54 +96,50 @@ class Enemy
 
     public void Update(GameTime gameTime2)
     {
-        if (eHealth > 1)
+        if (isAlive == true)
         {
+            distanceTrav = 0;
             patrolling();
-            squareUpdate();
             knightDistanceX = knight.knightPos().X - enemy.XPos;
-            knightDistanceY = knight.knightPos().Y - enemy.YPos;
-            if (knightDistanceX >= -200 && knightDistanceX <= 200)
+            //knightDistanceY = knight.knightPos().Y - enemy.YPos;
+            if (knightDistanceX >= -250 && knightDistanceX <= 250)
             {
-                //Console.WriteLine("Following");
+                Console.WriteLine("Following");
                 following();
             }
             else
             {
                 patrolling();
+                Console.WriteLine("Patrolling");
             }
             if (knightDistanceX >= -50 && knightDistanceX <= 50)
             {
-                Console.WriteLine("Attacking");
+                //Console.WriteLine("Attacking");
                 isInRange = true;
                 enemyAttacking(gameTime2);
             }
-        }
-       
+            //Console.WriteLine(distanceTrav);
+        }       
         
-    }
-    public void squareUpdate()
-    {
-        redsquare1.Position = new Vector2(enemy.XPos, enemy.YPos);
-        redsquare2.Position = new Vector2(enemy.XPos + (400 * direction), enemy.YPos);
-        redsquare3.Position = new Vector2(enemy.XPos, enemy.YPos + 50);
-        redsquare4.Position = new Vector2(enemy.XPos + (400 * direction), enemy.YPos + 50);
-
     }
 
     public void patrolling()
     {
         enemy.setCurrentAction("run");
         enemy.XPos += xVelocity * direction;
+        distanceTrav += 1;
         if (enemy.XPos == 800)
-        {
-            enemy.setCurrentDirection("left");
-            direction = -1;
-
-        }
-        else if (enemy.XPos == 200)
         {
             enemy.setCurrentDirection("right");
             direction = 1;
+            //distanceTrav += 1;
+
+        }
+        else if (enemy.XPos == 1400)
+        {
+            enemy.setCurrentDirection("left");
+            direction = -1;
+            //distanceTrav -= 1;
         }
     }
 
@@ -169,7 +166,7 @@ class Enemy
         
         //knight.kHealth -= 20;
         attackDelay += gameTime.ElapsedGameTime.TotalSeconds;
-        if (attackDelay > 1.5)
+        if (attackDelay > 1.0)
         {
             enemy.setCurrentAction("attack");
             knight.kHealth -= 20;
@@ -180,13 +177,9 @@ class Enemy
 
     public void enemyDraw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        if(eHealth > 1)
+        if(isAlive == true)
         {
             enemy.Draw(gameTime, spriteBatch);
-            redsquare1.Draw(spriteBatch);
-            redsquare2.Draw(spriteBatch);
-            redsquare3.Draw(spriteBatch);
-            redsquare4.Draw(spriteBatch);
         }
        
        
