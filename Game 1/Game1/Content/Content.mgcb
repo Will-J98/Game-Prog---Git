@@ -171,18 +171,6 @@
 /processorParam:TextureFormat=Color
 /build:KnightAttack.png
 
-#begin KnightAttack.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:KnightAttack.png
-
 #begin KnightIdle.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -218,6 +206,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:KnightRun.png
+
+#begin LongPlat.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:LongPlat.png
+
+#begin new flag.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:new flag.png
 
 #begin NinjaAttack#.png
 /importer:TextureImporter

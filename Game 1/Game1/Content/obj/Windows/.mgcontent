@@ -21,6 +21,8 @@
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightIdle.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightJump.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/KnightRun.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/LongPlat.png</File>
+    <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/new flag.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/NinjaAttack#.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/NinjaIdle.png</File>
     <File>D:/Uni work/Game programming/Game Prog - Git/Game 1/Game1/Content/NinjaRun.png</File>
@@ -36,6 +38,8 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>HealthBar.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

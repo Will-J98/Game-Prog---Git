@@ -47,7 +47,7 @@ class Character
                 (int)myKnight.XPos,
                 (int)myKnight.YPos,
                 (int)myKnight.GetBox().X,
-                (int)myKnight.GetBox().Y);
+                (int)myKnight.GetBox().Y - 10);
         }
     }
 
@@ -57,7 +57,7 @@ class Character
         {
             return new Rectangle(
                 (int)(myKnight.XPos),
-                (int)(myKnight.YPos + myKnight.GetBox().Y),
+                (int)(myKnight.YPos + myKnight.GetBox().Y - 10),
                 (int)(myKnight.GetBox().X),
                 10);
 
@@ -77,7 +77,7 @@ class Character
         redsquare3.Position = new Vector2(myKnight.XPos, myKnight.YPos + myKnight.GetBox().Y);
 
         redsquare4.LoadContent(thecontentmanager, "RedSquare");
-        redsquare4.Position = new Vector2(myKnight.XPos + myKnight.GetBox().X, myKnight.YPos + myKnight.GetBox().Y);
+        redsquare4.Position = new Vector2(myKnight.XPos + myKnight.GetBox().X, myKnight.YPos + myKnight.GetBox().Y + 20);
     }
     public void squareUpdate()
     {

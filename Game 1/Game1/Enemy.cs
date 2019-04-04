@@ -20,7 +20,6 @@ class Enemy
     Single_Sprite redsquare4 = new Single_Sprite();
     Character knight;
     float knightDistanceX;
-    float knightDistanceY;
     public bool isAlive = true;
     public bool isInRange = false;
     double attackDelay = 0;
@@ -112,12 +111,13 @@ class Enemy
                 patrolling();
                 Console.WriteLine("Patrolling");
             }
-            if (knightDistanceX >= -50 && knightDistanceX <= 50)
+            if (knightDistanceX >= -75 && knightDistanceX <= 75)
             {
                 //Console.WriteLine("Attacking");
                 isInRange = true;
                 enemyAttacking(gameTime2);
             }
+            else isInRange = false;
             //Console.WriteLine(distanceTrav);
         }       
         

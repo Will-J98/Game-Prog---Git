@@ -169,14 +169,14 @@ class GameLevel
         platformFour.LoadContent(theContentManager, "Floating platform");
         platformFour.Position = new Vector2(1400, 385);
 
-        platformFive.LoadContent(theContentManager, "Floating platform");
+        platformFive.LoadContent(theContentManager, "LongPlat");
         platformFive.Position = new Vector2(1650, 270);
 
         platformSix.LoadContent(theContentManager, "Floating platform");
-        platformSix.Position = new Vector2(1900, 385);
+        platformSix.Position = new Vector2(2000, 385);
 
         platformSeven.LoadContent(theContentManager, "Floating platform");
-        platformSeven.Position = new Vector2(400, 385);
+        platformSeven.Position = new Vector2(2600, 385);
 
         #endregion
 
@@ -199,43 +199,7 @@ class GameLevel
 
     }
 
-    public void updateBackground(GameTime theGameTime)
-    {
-        if (backgroundOne.Position.X < -backgroundOne.Size.Width)
-        {
-            backgroundOne.Position.X = backgroundThree.Position.X + backgroundThree.Size.Width;
-        }
-
-        if (backgroundTwo.Position.X < -backgroundTwo.Size.Width)
-        {
-            backgroundTwo.Position.X = backgroundOne.Position.X + backgroundOne.Size.Width;
-        }
-
-        if (backgroundThree.Position.X < -backgroundThree.Size.Width)
-        {
-            backgroundThree.Position.X = backgroundTwo.Position.X + backgroundTwo.Size.Width;
-        }
-        if (backgroundFour.Position.X < -backgroundFour.Size.Width)
-        {
-            backgroundFour.Position.X = backgroundThree.Position.X + backgroundThree.Size.Width;
-        }
-
-        if (backgroundFive.Position.X < -backgroundFive.Size.Width)
-        {
-            backgroundFive.Position.X = backgroundFour.Position.X + backgroundFour.Size.Width;
-        }
-
-        Direction = new Vector2(-1, 0);
-        scrollSpeed = new Vector2(160, 0);
-
-        backgroundOne.Position += Direction * scrollSpeed * (float)theGameTime.ElapsedGameTime.TotalSeconds;
-        backgroundTwo.Position += Direction * scrollSpeed * (float)theGameTime.ElapsedGameTime.TotalSeconds;
-        backgroundThree.Position += Direction * scrollSpeed * (float)theGameTime.ElapsedGameTime.TotalSeconds;
-        backgroundFour.Position += Direction * scrollSpeed * (float)theGameTime.ElapsedGameTime.TotalSeconds;
-        backgroundFive.Position += Direction * scrollSpeed * (float)theGameTime.ElapsedGameTime.TotalSeconds;
-
-
-    }
+    
 
     public void drawLevel(SpriteBatch spriteBatch)
     {
@@ -262,14 +226,10 @@ class GameLevel
         platformSeven.Draw(spriteBatch);
 
 
-
-
         redSquare1.Draw(spriteBatch);
         redSquare2.Draw(spriteBatch);
         redSquare3.Draw(spriteBatch);
         redSquare4.Draw(spriteBatch);
-
-        //Health_Bar.Draw(spriteBatch);
     }
 
 

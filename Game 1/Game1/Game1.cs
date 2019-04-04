@@ -17,13 +17,14 @@ public class Game1 : Game
     Camera camera = new Camera();
     GroundCollision groundCollision;
     CoinCollection coin;
+    Single_Sprite flag = new Single_Sprite();
     //Display display = new Display();
     SpriteFont Health;
     SpriteFont Time;
     int gTime = 60;
     float timer;
-    
-    
+    bool gameOver = false;
+    bool canAddScore = true;
 
 
     private Color _backgroundColour = Color.CornflowerBlue;
@@ -91,7 +92,9 @@ public class Game1 : Game
         coin.LoadCoins(Content);
         enemy.LoadEnemy(Content);
         enemy.LoadSqaures(Content);
-        // TODO: use this.Content to load your game content here
+        flag.LoadContent(Content, "new flag");
+        flag.Position = new Vector2(2000, 430);
+        flag.Scale = 0.5f;
     }
    
 
@@ -155,7 +158,13 @@ public class Game1 : Game
             enemy.isAlive = false;
             enemy.isInRange = false;
         }
-        //display.updateTime(gameTime);
+
+        if (Knight.BoundingBox.Intersects(flag.BoundingBox) && canAddScore == true)
+        {
+            Knight.score += gTime * 100;
+            canAddScore = false;
+            
+        }
 
         base.Update(gameTime);
     }
@@ -177,6 +186,7 @@ public class Game1 : Game
         enemy.enemyDraw(gameTime, spriteBatch);
         //display.DrawText(spriteBatch);
         coin.drawCoins(spriteBatch);
+        flag.Draw(spriteBatch);
        
         spriteBatch.End();
 
