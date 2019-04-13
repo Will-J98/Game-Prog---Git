@@ -87,7 +87,7 @@ class Enemy
         enemy.addAnimatedSpriteStrip(enemyRunning);
         enemy.addAnimatedSpriteStrip(enemyIdle);
         enemy.addAnimatedSpriteStrip(enemyAttack);
-        enemy.XPos = 2000;
+        enemy.XPos = 4500;
         enemy.YPos = 420;
         xVelocity = 3;
         eHealth = 100;
@@ -103,13 +103,14 @@ class Enemy
             //knightDistanceY = knight.knightPos().Y - enemy.YPos;
             if (knightDistanceX >= -250 && knightDistanceX <= 250)
             {
-                Console.WriteLine("Following");
+                //Console.WriteLine("Following");
                 following();
             }
             else
             {
                 patrolling();
                 Console.WriteLine("Patrolling");
+                Console.WriteLine(enemy.XPos);
             }
             if (knightDistanceX >= -75 && knightDistanceX <= 75)
             {
@@ -128,14 +129,14 @@ class Enemy
         enemy.setCurrentAction("run");
         enemy.XPos += xVelocity * direction;
         distanceTrav += 1;
-        if (enemy.XPos == 800)
+        if (enemy.XPos <= 3500)
         {
             enemy.setCurrentDirection("right");
             direction = 1;
             //distanceTrav += 1;
 
         }
-        else if (enemy.XPos == 1400)
+        else if (enemy.XPos >= 4400)
         {
             enemy.setCurrentDirection("left");
             direction = -1;
@@ -166,7 +167,7 @@ class Enemy
         
         //knight.kHealth -= 20;
         attackDelay += gameTime.ElapsedGameTime.TotalSeconds;
-        if (attackDelay > 1.0)
+        if (attackDelay > 0.75)
         {
             enemy.setCurrentAction("attack");
             knight.kHealth -= 20;

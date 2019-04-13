@@ -10,73 +10,81 @@ using Microsoft.Xna.Framework.Graphics;
 class GameLevel
 {
     #region initSprites
-    Single_Sprite backgroundOne;
-    Single_Sprite backgroundTwo;
-    Single_Sprite backgroundThree;
-    Single_Sprite backgroundFour;
-    Single_Sprite backgroundFive;
-  
-    public Single_Sprite bottomFloor;
-    public Single_Sprite bottomFloorTwo;
-    public Single_Sprite bottomFloorThree;
-    public Single_Sprite bottomFloorFour;
-    public Single_Sprite bottomFloorFive;
-    public Single_Sprite bottomFloorSix;
-    public Single_Sprite bottomFloorSeven;
-    public Single_Sprite bottomFloorEight;
+    Single_Sprite backgroundOne = new Single_Sprite();
+    Single_Sprite backgroundTwo = new Single_Sprite();
+    Single_Sprite backgroundThree = new Single_Sprite();
+    Single_Sprite backgroundFour = new Single_Sprite();
+    Single_Sprite backgroundFive = new Single_Sprite();
+    Single_Sprite backgroundSix = new Single_Sprite();
+    Single_Sprite backgroundSeven = new Single_Sprite();
+    Single_Sprite backgroundEight = new Single_Sprite();
+    Single_Sprite backgroundNine = new Single_Sprite();
+    Single_Sprite backgroundTen = new Single_Sprite();
 
-    public Single_Sprite platformOne;
-    public Single_Sprite platformTwo;
-    public Single_Sprite platformThree;
-    public Single_Sprite platformFour;
-    public Single_Sprite platformFive;
-    public Single_Sprite platformSix;
-    public Single_Sprite platformSeven;
+
+
+
+    public Single_Sprite bottomFloor = new Single_Sprite();
+    public Single_Sprite bottomFloorTwo = new Single_Sprite();
+    public Single_Sprite bottomFloorThree = new Single_Sprite();
+    public Single_Sprite bottomFloorFour = new Single_Sprite();
+    public Single_Sprite bottomFloorFive = new Single_Sprite();
+    public Single_Sprite bottomFloorSix = new Single_Sprite();
+    public Single_Sprite bottomFloorSeven = new Single_Sprite();
+    public Single_Sprite bottomFloorEight = new Single_Sprite();
+
+    public Single_Sprite platformOne = new Single_Sprite();
+    public Single_Sprite platformTwo = new Single_Sprite();
+    public Single_Sprite platformThree = new Single_Sprite();
+    public Single_Sprite platformFour = new Single_Sprite();
+    public Single_Sprite platformFive = new Single_Sprite();
+    public Single_Sprite platformSix = new Single_Sprite();
+    public Single_Sprite platformSeven = new Single_Sprite();
+    public Single_Sprite platformEight = new Single_Sprite();
+    public Single_Sprite platformNine = new Single_Sprite();
+    public Single_Sprite platformTen = new Single_Sprite();
+    public Single_Sprite platformEleven = new Single_Sprite();
+    public Single_Sprite platformTwelve = new Single_Sprite();
+    public Single_Sprite platform13 = new Single_Sprite();
+    public Single_Sprite platform14 = new Single_Sprite();
+    public Single_Sprite platform15 = new Single_Sprite();
+    public Single_Sprite platform16 = new Single_Sprite();
+    public Single_Sprite platform17 = new Single_Sprite();
+    public Single_Sprite platform18 = new Single_Sprite();
 
     Single_Sprite redSquare1;
     Single_Sprite redSquare2;
     Single_Sprite redSquare3;
     Single_Sprite redSquare4;
-    int i;
-    Vector2 scrollSpeed = new Vector2 (160,0);
-    Vector2 Direction = new Vector2(-1, 0);
-    Vector2 Position = new Vector2(0, 0);
     #endregion
 
     
 
     //List<Single_Sprite> floors = new List<Single_Sprite>();
-    //List<Single_Sprite> platforms = new List<Single_Sprite>();
+    public List<Platform> platforms = new List<Platform>();
 
 
     public void Initialize()
     {
-        backgroundOne = new Single_Sprite();
         backgroundOne.Scale = 0.6f;
-        backgroundTwo = new Single_Sprite();
         backgroundTwo.Scale = 0.6f;
-        backgroundThree = new Single_Sprite();
         backgroundThree.Scale = 0.6f;
-        backgroundFour = new Single_Sprite();
         backgroundFour.Scale = 0.6f;
-        backgroundFive = new Single_Sprite();
         backgroundFive.Scale = 0.6f;
+        backgroundSix.Scale = 0.6f;
+        backgroundSeven.Scale = 0.6f;
+        backgroundEight.Scale = 0.6f;
+        backgroundNine.Scale = 0.6f;
+        backgroundTen.Scale = 0.6f;
 
-        bottomFloor = new Single_Sprite();
+
         bottomFloor.Scale = 0.7f;
-        bottomFloorTwo = new Single_Sprite();
         bottomFloorTwo.Scale = 0.7f;
-        bottomFloorThree = new Single_Sprite();
         bottomFloorThree.Scale = 0.7f;
-        bottomFloorFour = new Single_Sprite();
         bottomFloorFour.Scale = 0.7f;
-        bottomFloorFive = new Single_Sprite();
         bottomFloorFive.Scale = 0.7f;
-        bottomFloorSix = new Single_Sprite();
         bottomFloorSix.Scale = 0.7f;
-        bottomFloorSeven = new Single_Sprite();
         bottomFloorSeven.Scale = 0.7f;
-        bottomFloorEight = new Single_Sprite();
         bottomFloorEight.Scale = 0.7f;
 
         redSquare1 = new Single_Sprite();
@@ -84,27 +92,22 @@ class GameLevel
         redSquare3 = new Single_Sprite();
         redSquare4 = new Single_Sprite();
 
-
-        platformOne = new Single_Sprite();
         platformOne.Scale = 0.5f;
-
-        platformTwo = new Single_Sprite();
         platformTwo.Scale = 0.5f;
-
-        platformThree = new Single_Sprite();
         platformThree.Scale = 0.5f;
-
-        platformFour = new Single_Sprite();
         platformFour.Scale = 0.5f;
-
-        platformFive = new Single_Sprite();
         platformFive.Scale = 0.5f;
-
-        platformSix = new Single_Sprite();
         platformSix.Scale = 0.5f;
-
-        platformSeven = new Single_Sprite();
         platformSeven.Scale = 0.5f;
+        platformEight.Scale = 0.5f;
+        platformNine.Scale = 0.5f;
+        platformTen.Scale = 0.5f;
+        platformEleven.Scale = 0.5f;
+        platformTwelve.Scale = 0.5f;
+        platform13.Scale = 0.5f;
+        platform14.Scale = 0.5f;
+        platform15.Scale = 0.5f;
+       
 
     }
 
@@ -113,18 +116,36 @@ class GameLevel
         #region Load Background
         backgroundOne.LoadContent(theContentManager, "BG");
         backgroundOne.Position = new Vector2(0, 0);
-        
+       
         backgroundTwo.LoadContent(theContentManager, "BG");
         backgroundTwo.Position = new Vector2(backgroundOne.Position.X + backgroundOne.Size.Width, 0);
      
         backgroundThree.LoadContent(theContentManager, "BG");
         backgroundThree.Position = new Vector2(backgroundTwo.Position.X + backgroundTwo.Size.Width, 0);
-
+       
         backgroundFour.LoadContent(theContentManager, "BG");
         backgroundFour.Position = new Vector2(backgroundThree.Position.X + backgroundThree.Size.Width, 0);
 
         backgroundFive.LoadContent(theContentManager, "BG");
         backgroundFive.Position = new Vector2(backgroundFour.Position.X + backgroundFour.Size.Width, 0);
+
+        backgroundSix.LoadContent(theContentManager, "BG");
+        backgroundSix.Position = new Vector2(backgroundFive.Position.X + backgroundFive.Size.Width, 0);
+
+        backgroundSeven.LoadContent(theContentManager, "BG");
+        backgroundSeven.Position = new Vector2(backgroundSix.Position.X + backgroundSix.Size.Width, 0);
+
+        backgroundEight.LoadContent(theContentManager, "BG");
+        backgroundEight.Position = new Vector2(backgroundSeven.Position.X + backgroundSeven.Size.Width, 0);
+
+        backgroundNine.LoadContent(theContentManager, "BG");
+        backgroundNine.Position = new Vector2(backgroundEight.Position.X + backgroundEight.Size.Width, 0);
+
+        backgroundTen.LoadContent(theContentManager, "BG");
+        backgroundTen.Position = new Vector2(backgroundNine.Position.X + backgroundNine.Size.Width, 0);
+
+
+
         #endregion
 
         #region Load Floor
@@ -156,27 +177,52 @@ class GameLevel
         #region Load Platforms
 
 
-
         platformOne.LoadContent(theContentManager, "Floating platform");
         platformOne.Position = new Vector2(400, 385);
 
         platformTwo.LoadContent(theContentManager, "Floating platform");
-        platformTwo.Position = new Vector2(650, 270);
+        platformTwo.Position = new Vector2(700, 270);
 
         platformThree.LoadContent(theContentManager, "Floating platform");
-        platformThree.Position = new Vector2(900, 385);
+        platformThree.Position = new Vector2(1000, 385);
 
         platformFour.LoadContent(theContentManager, "Floating platform");
-        platformFour.Position = new Vector2(1400, 385);
+        platformFour.Position = new Vector2(1600, 385);
 
         platformFive.LoadContent(theContentManager, "LongPlat");
-        platformFive.Position = new Vector2(1650, 270);
+        platformFive.Position = new Vector2(1900, 270);
 
         platformSix.LoadContent(theContentManager, "Floating platform");
-        platformSix.Position = new Vector2(2000, 385);
+        platformSix.Position = new Vector2(2400, 385);
 
         platformSeven.LoadContent(theContentManager, "Floating platform");
-        platformSeven.Position = new Vector2(2600, 385);
+        platformSeven.Position = new Vector2(2900, 385);
+
+        platformEight.LoadContent(theContentManager, "Floating platform");
+        platformEight.Position = new Vector2(3100, 270);
+
+        platformNine.LoadContent(theContentManager, "Floating platform");
+        platformNine.Position = new Vector2(3400, 385);
+
+        platformTen.LoadContent(theContentManager, "Floating platform");
+        platformTen.Position = new Vector2(4500, 385);
+
+        platformEleven.LoadContent(theContentManager, "LongPlat");
+        platformEleven.Position = new Vector2(4800, 270);
+
+        platformTwelve.LoadContent(theContentManager, "Floating platform");
+        platformTwelve.Position = new Vector2(5300, 385);
+
+        platform13.LoadContent(theContentManager, "Floating platform");
+        platform13.Position = new Vector2(5900, 385);
+
+        platform14.LoadContent(theContentManager, "LongPlat");
+        platform14.Position = new Vector2(6200, 270);
+
+        platform15.LoadContent(theContentManager, "Floating platform");
+        platform15.Position = new Vector2(6600, 385);
+
+       
 
         #endregion
 
@@ -192,14 +238,9 @@ class GameLevel
         redSquare4.LoadContent(theContentManager, "RedSquare");
         redSquare4.Position = new Vector2(platformOne.BoundingBox.X + platformOne.BoundingBox.Width, platformOne.BoundingBox.Y + platformOne.BoundingBox.Height);
 
-        
-
-        //Health_Bar.LoadContent(theContentManager, "HealthBar");
-        //Health_Bar.Position = new Vector2(250, 100);
 
     }
 
-    
 
     public void drawLevel(SpriteBatch spriteBatch)
     {
@@ -208,6 +249,11 @@ class GameLevel
         backgroundThree.Draw(spriteBatch);
         backgroundFour.Draw(spriteBatch);
         backgroundFive.Draw(spriteBatch);
+        backgroundSix.Draw(spriteBatch);
+        backgroundSeven.Draw(spriteBatch);
+        backgroundEight.Draw(spriteBatch);
+        backgroundNine.Draw(spriteBatch);
+        backgroundTen.Draw(spriteBatch);
 
         bottomFloor.Draw(spriteBatch);
         bottomFloorTwo.Draw(spriteBatch);
@@ -224,16 +270,25 @@ class GameLevel
         platformFive.Draw(spriteBatch);
         platformSix.Draw(spriteBatch);
         platformSeven.Draw(spriteBatch);
+        platformEight.Draw(spriteBatch);
+        platformNine.Draw(spriteBatch);
+        platformTen.Draw(spriteBatch);
+        platformEleven.Draw(spriteBatch);
+        platformTwelve.Draw(spriteBatch);
+        platform13.Draw(spriteBatch);
+        platform14.Draw(spriteBatch);
+        platform15.Draw(spriteBatch);
+        
 
 
-        redSquare1.Draw(spriteBatch);
-        redSquare2.Draw(spriteBatch);
-        redSquare3.Draw(spriteBatch);
-        redSquare4.Draw(spriteBatch);
+
+
+        //redSquare1.Draw(spriteBatch);
+        //redSquare2.Draw(spriteBatch);
+        //redSquare3.Draw(spriteBatch);
+        //redSquare4.Draw(spriteBatch);
     }
 
 
 
-
 }
-

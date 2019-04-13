@@ -40,7 +40,7 @@ class AnimatedSpriteStrip
     // counts from 0 to everupwards as the object lives on
     private int totalFramesPlayed;
 
-    public float scale = 0.4f;
+    public float scale = 0.35f;
 
 
     // NEW stuff for the User Input examples

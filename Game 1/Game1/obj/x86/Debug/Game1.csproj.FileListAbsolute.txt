@@ -267,3 +267,5 @@ D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\NinjaAttack.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\new flag.xnb
 D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\LongPlat.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\Fonts\BigText.xnb
+D:\Uni work\Game programming\Game Prog - Git\Game 1\Game1\bin\Windows\x86\Debug\Content\greytile.xnb

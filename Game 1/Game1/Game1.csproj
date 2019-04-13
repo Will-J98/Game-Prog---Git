@@ -53,6 +53,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="GroundCollision.cs" />
     <Compile Include="InputHandler.cs" />
+    <Compile Include="Platform.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GameLevel.cs" />

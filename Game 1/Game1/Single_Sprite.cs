@@ -12,7 +12,6 @@ class Single_Sprite
     private Texture2D mSpriteTexture;
     public Rectangle Size;
     public float Scale = 1.0f;
-    internal int Top;
 
     public Rectangle BoundingBox
     {
@@ -34,7 +33,7 @@ class Single_Sprite
                 (int)Position.X,
                 (int)Position.Y,
                 (int)(mSpriteTexture.Width * Scale),
-                1);
+                5);
         }
     }
 

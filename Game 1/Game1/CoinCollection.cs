@@ -12,7 +12,6 @@ class CoinCollection
     Single_Sprite coins = new Single_Sprite();
     Character knight;
     int i;
-    //public Vector2 coinPosition = new Vector2();
     Random r = new Random();
 
     public List<Single_Sprite> coinList = new List<Single_Sprite>();
@@ -29,16 +28,6 @@ class CoinCollection
             coinList[i].LoadContent(content, "coin");
             coinList[i].Scale = 0.35f;
             int xCoin = r.Next(0, 500);
-            //if(coinList.Count() == 1)
-            //{
-            //    coinList[i].Position = new Vector2(300, 300);
-            //}
-            //else
-            //{
-            //    int xCoin = r.Next((int)coinList[i-1].Position.X, (int)coinList[i - 1].Position.X + 200);
-            //    int yCoin = r.Next(0, 500);
-            //    coinList[i].Position = new Vector2(xCoin, yCoin);
-            //}
 
             
             coinList[i].Position = new Vector2(xCoin, 300);
@@ -46,8 +35,17 @@ class CoinCollection
         }
 
         //Console.WriteLine("Coin 0" + coinList[0].Position);
-        coinList[10].Position = new Vector2(700, 175);
-        coinList[0].Position = new Vector2(5000, 300);
+        coinList[10].Position = new Vector2(450, 300);
+        coinList[9].Position = new Vector2(1650, 325);
+        coinList[8].Position = new Vector2(2450, 300);
+        coinList[7].Position = new Vector2(3200, 200);
+        coinList[6].Position = new Vector2(4000, 108);
+        coinList[5].Position = new Vector2(4950, 225);
+        coinList[4].Position = new Vector2(5400, 200);
+        coinList[3].Position = new Vector2(6400, 175);
+        coinList[2].Position = new Vector2(5800, 400);
+        coinList[1].Position = new Vector2(6900, 400);
+        coinList[0].Position = new Vector2(10000,500);
     }
 
     public CoinCollection(Character _knight)

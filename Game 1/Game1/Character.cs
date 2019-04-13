@@ -15,7 +15,7 @@ class Character
     public int kHealth = 100;
     public float startY, jumpspeed;
     public bool is_grounded;
-    int velocityX = 10;
+    int velocityX = 8;
     const float GRAVITY = 9.0f;
     public float velocityY;
     public int score = 0;
@@ -114,7 +114,7 @@ class Character
         myKnight.addAnimatedSpriteStrip(myKnightIdle);
         myKnight.addAnimatedSpriteStrip(myKnightAttack);
         myKnight.XPos = 200;
-        myKnight.YPos = 0;
+        myKnight.YPos = 200;
         //knightPos.Y = myKnight.YPos;
         //knightPos.X = myKnight.XPos;
         
@@ -195,10 +195,10 @@ class Character
     public void knightDraw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         myKnight.Draw(gameTime, spriteBatch);
-        redsquare1.Draw(spriteBatch);
-        redsquare2.Draw(spriteBatch);
-        redsquare3.Draw(spriteBatch);
-        redsquare4.Draw(spriteBatch);
+        //redsquare1.Draw(spriteBatch);
+        //redsquare2.Draw(spriteBatch);
+        //redsquare3.Draw(spriteBatch);
+        //redsquare4.Draw(spriteBatch);
     }
 
 }

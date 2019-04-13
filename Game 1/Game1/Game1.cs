@@ -9,8 +9,8 @@ public class Game1 : Game
 {
     GraphicsDeviceManager graphics;
     SpriteBatch spriteBatch;
-    private Texture2D heroRunCells;
     private InputHandler input;
+    Single_Sprite backDrop = new Single_Sprite();
     GameLevel myLevel = new GameLevel();
     Character Knight;
     Enemy enemy;
@@ -18,9 +18,9 @@ public class Game1 : Game
     GroundCollision groundCollision;
     CoinCollection coin;
     Single_Sprite flag = new Single_Sprite();
-    //Display display = new Display();
     SpriteFont Health;
     SpriteFont Time;
+    SpriteFont BigText;
     int gTime = 60;
     float timer;
     bool gameOver = false;
@@ -29,23 +29,12 @@ public class Game1 : Game
 
     private Color _backgroundColour = Color.CornflowerBlue;
 
-    //private List<Component> _gameComponents;
-  
-
-
-    // The AnimatedSpriteStrip class is not part of XNA but has been written by Simon Schofield
-    // to help with the animation of animated sprites and can be found in the 
-    // solution explorer
-
-
     public Game1()
     {
         graphics = new GraphicsDeviceManager(this);
         graphics.PreferredBackBufferWidth = 768;
         graphics.PreferredBackBufferHeight = 576;
         Content.RootDirectory = "Content";
-
-
 
         // The InputHandler class is not part of XNA but has been written by Simon Schofield to help
         // parse user input. The class casn be found in the Solution Explorer
@@ -70,7 +59,6 @@ public class Game1 : Game
         myLevel.Initialize();
         
        
-
         base.Initialize();
     }
 
@@ -85,15 +73,18 @@ public class Game1 : Game
 
         Health = Content.Load<SpriteFont>("Fonts/Health1");
         Time = Content.Load<SpriteFont>("Fonts/Time");
-        //display.LoadText(Content);
+        BigText = Content.Load<SpriteFont>("Fonts/BigText");
+        backDrop.LoadContent(Content, "greytile");
+        backDrop.Scale = 2.0f;
         myLevel.LoadLevel(Content);
         Knight.LoadKnight(Content);
-        Knight.LoadSqaures(Content);
+        //Knight.LoadSqaures(Content);
         coin.LoadCoins(Content);
         enemy.LoadEnemy(Content);
-        enemy.LoadSqaures(Content);
+        //enemy.LoadSqaures(Content);
+
         flag.LoadContent(Content, "new flag");
-        flag.Position = new Vector2(2000, 430);
+        flag.Position = new Vector2(7000, 430);
         flag.Scale = 0.5f;
     }
    
@@ -120,9 +111,6 @@ public class Game1 : Game
         input.Update();
 
         Knight.squareUpdate();
-        //enemy.squareUpdate();
-
-        
         camera.Update(Knight.knightPos());
 
         if (groundCollision.is_Colliding() == true)
@@ -163,9 +151,15 @@ public class Game1 : Game
         {
             Knight.score += gTime * 100;
             canAddScore = false;
+            gameOver = true;
             
         }
 
+        if(gTime == 0 || Knight.kHealth == 0)
+        {
+            gameOver = true;
+        }
+        //Console.WriteLine(Knight.knightPos().X);
         base.Update(gameTime);
     }
 
@@ -195,6 +189,14 @@ public class Game1 : Game
         spriteBatch.DrawString(Health, "Health: " + Knight.kHealth, new Vector2(0, 0), Color.White);
         spriteBatch.DrawString(Time, gTime.ToString(), new Vector2(334, 0), Color.White);
         spriteBatch.DrawString(Health, "Score: " + Knight.score.ToString(), new Vector2(500, 0), Color.White);
+
+        if(gameOver == true)
+        {
+            backDrop.Draw(spriteBatch);
+            spriteBatch.DrawString(BigText, "Your final score is: " + Knight.score.ToString(), new Vector2(75,250), Color.IndianRed);
+            spriteBatch.DrawString(BigText, "GameOver", new Vector2(200, 50), Color.IndianRed);
+        }
+
 
         spriteBatch.End();
 

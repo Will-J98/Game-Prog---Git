@@ -85,6 +85,13 @@
 /processorParam:TextureFormat=Color
 /build:Floating platform.png
 
+#begin Fonts/BigText.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/BigText.spritefont
+
 #begin Fonts/Health1.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
@@ -98,6 +105,18 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:Fonts/Time.spritefont
+
+#begin greytile.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:greytile.png
 
 #begin HealthBar_thumb.png
 /importer:TextureImporter
